@@ -6,11 +6,9 @@ import (
 )
 
 func main() {
-	b  := make([]byte, 16)
-	n, err := rand.Read(b)
+	i, err := rand.Prime(rand.Reader, 512)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(n)
-	fmt.Printf("%x\n", b)
+	fmt.Println(i)
 }
